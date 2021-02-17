@@ -1,0 +1,24 @@
+<html>
+<head>
+</head>
+<body>
+    <script>
+        let para = prompt("Enter the paragraph here",);
+        let i=0;
+        let wordcount ;
+        let charcount ;
+        /*while(para[i]!='\0'){
+            console.log(para[i]);
+            if(para[i]==" ")
+                spacecount ++;
+        }*/
+        wordcount=para.split(" ").length;
+        charcount=para.length;
+        
+        console.log('Character Count (With spaces):- '+ charcount);
+        console.log('Character Count (Without spaces):- '+ (charcount - wordcount + 1) );
+        console.log('Word Count:- '+ wordcount );
+        console.log('Space Count:-'+ (wordcount - 1));
+    </script>
+</body>
+</html>

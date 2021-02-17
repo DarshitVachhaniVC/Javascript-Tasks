@@ -1,0 +1,65 @@
+<html>
+    <head>
+    </head>
+    <body>
+    <script>
+    let noofenteries = prompt("Enter no. of person you want to make entry for",);
+let person=new Array();
+for(let i =0; i<noofenteries; i++)
+{
+    person[i]=
+    {
+        name:prompt("Enter your name",),
+        age:prompt("Enter your age",),
+        language:prompt("Enter your city",)
+    }
+}
+//Sort enteries
+console.log(person);
+function sort()
+{
+    for(let i=0; i<noofenteries-1;i++)
+    {
+        for(let j=i+1;j<noofenteries;j++)
+        {
+                if(person[i].name.toLowerCase()>person[i+1].name.toLowerCase())
+                {
+                    let temp = person[i];
+                    person[i] = person[j];
+                    person[j] = temp;
+                }
+        }
+    }
+    console.log("Sorted Enteries:-", person);
+}
+//Search 
+function search()
+{
+    let searchvar=prompt("Enter the string to be searched");
+    let search=new Array();
+    for(i=0;i<noofenteries;i++)
+    {
+        if(person[i].name.toLowerCase().includes(searchvar))
+        {
+            search.push(person[i].name);
+        }
+    }
+    console.log("Search Results:- "+search);
+}
+//Display the enteries
+console.log(person);
+//search from the enteries
+search();
+//sort the enteries
+sort();
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+

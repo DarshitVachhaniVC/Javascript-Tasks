@@ -1,0 +1,37 @@
+<html>
+<head>
+</head>
+<body>
+    <script>
+        let n = prompt("Enter the no. of digits you want to store",);
+        let MIN = prompt("Enter the minimum no.",);
+        let min = Number.parseInt(MIN);
+        let MAX = prompt("Enter the maximum no.",);
+        let max = Number.parseInt(MAX);
+        //let no = prompt("Enter which smallest no you want",);
+        let arr = new Array();
+        for(let i=0; i<n;i++){
+            
+            let randvar =  Math.floor((Math.random() * (max - min))+ min);
+            arr[i]=randvar;
+            //console.log(randvar);
+        }
+
+        console.log(arr);
+        //Sort
+        for(let i=0; i<n-1; i++){
+            for(let j=i+1; j<n; j++){
+                if(arr[i]>arr[j]){
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                    }   
+                }
+            }
+        console.log(arr);
+        let NO = prompt("Enter which smallest from the start do you want",);
+        let no = Number.parseInt(NO);
+        console.log(arr[no-1]);
+    </script>
+</body>
+</html>

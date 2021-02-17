@@ -1,0 +1,54 @@
+<html>
+<head>
+</head>
+<body>
+    <script>
+        let MIN=prompt("Enter the minimum no.",);
+        let min = Number.parseInt(MIN);
+        let MAX=prompt("Enter the maximum no.",);
+        let max = Number.parseInt(MAX);
+        let arrnum = new Array();
+        let arrsum = new Array();
+        let i=0;
+        let retvar;
+        
+        //Addition function with recursion
+        function sum (num){
+
+                if(num == min)
+                {
+                    return min;
+                }
+                //Pushing num in the number array                                                       
+                arrnum.push(num);
+
+                //Recursion
+                retvar=num + sum(num - 1);
+
+                //Pushing sum in the sum array
+                arrsum.push(retvar);
+
+            return retvar
+        }
+
+        //Verifying if min is less than max
+        if(min < max){
+            
+            let ans = sum(max);
+            console.log(ans);
+            arrnum.push(min);
+            arrsum.unshift(min);
+            console.log(arrnum.reverse());
+            console.log(arrsum);
+        }
+        else if(min === max){
+            alert("Both the numbers entered are same please refresh the page to start again");
+        }
+        else{
+            alert("Minimum is biggeer than maximum please refresh the page to start again")
+        }
+    </Script>
+
+     
+</body>
+</html>

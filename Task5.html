@@ -1,0 +1,51 @@
+<html>
+<head>
+</head>
+<body>
+    <script>
+    let noofenteries = prompt("Enter no. of person you want to make entry for",);
+    let person=new Array();
+
+    for(let i =0; i<noofenteries; i++)
+    {
+        let xyz=new Array();
+        let fullnamevar=prompt("Enter the full name",)
+        xyz=fullnamevar.split(" ");
+        /*
+        let arrlen = xyz.length;
+        let lastnamevar;
+        let lastnamearr=new Array();
+        for(let i=0; i<arrlen;i++)
+        {
+            lastnamearr[i]=fullnamevar.split(" ")[i+1];
+        }
+        lastnamevar=lastnamearr.join(" ");
+        person[i]=
+        {
+            firstname:fullnamevar.split(" ")[0],
+            lastname:lastnamevar
+        }*/
+        person[i]=
+        {
+            firstname:xyz[0],
+            lastname:xyz.slice(1,).join(" ")
+        }
+    }
+
+//Search
+let searchname=prompt("Enter the name you want to search for",);
+let searcharr=new Array();
+for(let j=0; j<noofenteries; j++)
+{
+    if(person[j].firstname.toLowerCase()===searchname)
+    {
+        searcharr[j]=person[j];
+    }
+}
+//Display the enteries
+console.log("Display the enteries",person);
+//Display sorted enteries
+console.log("Search Results",searcharr);
+    </script>
+</body>
+</html>
